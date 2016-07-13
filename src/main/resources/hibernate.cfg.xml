@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC "-//Hibernate/Hibernate Configuration DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <!-- Database connection settings -->
+    <property name="connection.driver_class">org.postgresql.Driver</property>
+    <property name="connection.url">jdbc:postgresql://$OPENSHIFT_POSTGRESQL_DB_HOST:$OPENSHIFT_POSTGRESQL_DB_POR/javawebshop</property>
+    <property name="connection.username">admindzb63m2</property>
+    <property name="connection.password">hPGJBG-Me6Ap</property>
+    <!-- JDBC connection pool (use the built-in) -->
+    <property name="connection.pool_size">5</property>
+    <!-- SQL dialect -->
+    <property name="dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+    <!-- Disable the second-level cache  -->
+    <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+    <!-- Echo all executed SQL to stdout -->
+    <property name="show_sql">true</property>
+    <!-- Drop and re-create the database schema on startup -->
+    <property name="hbm2ddl.auto">update</property>
+    <mapping class="WebShop.Kategorija"/>
+    <mapping class="WebShop.Korisnik"/>
+    <mapping class="WebShop.Narudzba"/>
+    <mapping class="WebShop.Proizvod"/>
+    <mapping class="WebShop.Stavka"/>
+  </session-factory>
+</hibernate-configuration>
